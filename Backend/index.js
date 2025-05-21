@@ -7,16 +7,16 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-        origin: process.env.FRONTEND_URL || "http://localhost:5173",
-        credentials: true
-    }
-));
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 3000;
 
 app.get("/api/news", async (req, res) => {
-  const query = req.query.q || "India";
 
+  const query = req.query.q || "India";
+  
   try {
     const response = await fetch(
       `https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.NEWS_API_KEY}`
@@ -24,6 +24,7 @@ app.get("/api/news", async (req, res) => {
 
     const data = await response.json();
     res.json(data);
+    
   } catch (error) {
     console.error("Error fetching news:", error);
     res.status(500).json({ error: "Failed to fetch news" });
