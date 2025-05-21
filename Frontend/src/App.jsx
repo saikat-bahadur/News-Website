@@ -8,7 +8,6 @@ function App() {
   const [query, setQuery] = useState("India");
 
   const fetchNews = async (searchQuery) => {
-  // const res = await fetch(`https://news-api-proxy.vercel.app/api/news?q=${searchQuery}`);
    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/news?q=${searchQuery}`);
   const data = await res.json();
   setArticles(data.articles || []);
