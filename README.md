@@ -108,7 +108,7 @@ News-app/
 
 ## Screenshot
 
-![NexusNews Screenshot](public/home.png)
+![NexusNews Screenshot](Frontend/public/home.png)
 
 ## Contributing
 
