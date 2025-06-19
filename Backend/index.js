@@ -11,7 +11,7 @@ app.use(cors({
   credentials: true
 }));
 
-// const PORT = process.env.PORT || 3000;  use for local
+const PORT = process.env.PORT || 3000;  use for local
 
 app.get("/api/news", async (req, res) => {
 
