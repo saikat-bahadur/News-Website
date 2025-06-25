@@ -18,8 +18,7 @@ services:
     container_name: news_backend
     ports:
       - "3000:3000"
-    env_file:
-      - ./Backend/.env
+  
     networks:
       - news_network
 
