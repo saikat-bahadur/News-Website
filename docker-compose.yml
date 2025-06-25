@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: saikat816/news_website:frontend
+    container_name: news_frontend
+    ports:
+      - "5173:5173"
+
+    networks:
+      - news_network
+
+    depends_on:
+      - backend
+
+  backend:
+    image: saikat816/news_website:backend
+    container_name: news_backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./Backend/.env
+    networks:
+      - news_network
+
+networks:
+  news_network:
+    driver: bridge
